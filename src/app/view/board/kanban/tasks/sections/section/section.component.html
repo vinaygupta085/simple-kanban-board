@@ -1,0 +1,17 @@
+<h3>
+  {{title}}({{tasks.length}})
+  <input *ngIf="todo" type="button" value="+" (click)="addTask($event)" title="Add New Task"/>
+</h3>
+
+<div *ngIf="addNew" class="new-task">
+  <span class="close" (click)="toggle($event)" title="Remove">X</span>
+  <input type="text" [(ngModel)]="taskName" required/>
+  <input type="button" value="Save" (click)="saveTask($event)" title="Save"/>
+</div>
+
+<div *ngFor="let task of tasks" cdkDrag [class.todo-task]="todo">
+    <span class="close" (click)="removeTask($event, task)" title="Remove Task">X</span>
+    <span >{{ task.name }}</span>
+</div>
+
+

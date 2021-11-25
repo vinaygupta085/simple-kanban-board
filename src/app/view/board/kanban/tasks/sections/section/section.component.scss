@@ -1,0 +1,40 @@
+@import '../../../../../../../assets/layout/sass/theme_variables.scss';
+
+h3 {
+ @extend .block-margin ;
+}
+
+input[type="button"] {
+  margin: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+div {
+  margin: 0 8px 16px;
+  min-height: 80px;
+  background-color: #FFFFFF;
+  border-left: 2px solid #F2CB1D;
+  width: 60%;
+
+  .close {
+    position: relative;
+    top: 0;
+    left: 95%;
+
+    &:hover {
+      cursor: pointer;
+      color: $menu-color;;
+    }
+  }
+ }
+
+ .todo-task {
+    border-left: 2px solid #2e52b4;
+ }
+
+ .new-task {
+  border-left: 2px solid #22B14C;
+}

@@ -1,0 +1,25 @@
+@import '../../../assets/layout/sass/theme_variables.scss';
+
+nav {
+    @extend .block-margin;
+    font-size: 12px;
+   
+    padding: 8px;
+    border: 1px solid #d5d5d5;
+
+    a {
+        text-decoration: none;
+        color: $menu-color;
+        background-color: #D5D5D5;
+        padding: 4px;
+
+        &:hover {
+            text-decoration: underline;
+            color: $menu-hover-color;
+        }
+
+        &:visited {
+            color: $menu-color;
+        }
+    }
+}

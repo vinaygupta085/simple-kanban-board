@@ -1,0 +1,27 @@
+
+@import '../assets/layout/sass/theme_variables.scss';
+
+:host {
+    @extend .display-flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    @extend .display-flex;
+    flex: 1;
+    overflow: hidden;
+
+    .content {
+        @extend .display-flex;
+        margin-top: 8px;
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+      }
+  }
+
+  footer {
+      text-align: center;
+  }

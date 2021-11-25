@@ -1,0 +1,32 @@
+<div class="grid-list">
+    <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[implementList, doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+          <app-section [stage]="1" [tasks]="todo"></app-section>
+    </div>
+
+    <div
+        cdkDropList
+        #implementList="cdkDropList"
+        [cdkDropListData]="implemneting"
+        [cdkDropListConnectedTo]="[todoList, doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+          <app-section [stage]="2" [tasks]="implemneting"></app-section>
+    </div>
+
+    <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[implementList, todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+          	<app-section [stage]="3" [tasks]="done"></app-section>
+      </div>
+
+</div>
