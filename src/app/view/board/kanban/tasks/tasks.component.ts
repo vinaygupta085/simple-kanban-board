@@ -37,7 +37,7 @@ export class TasksComponent implements OnInit {
 
 
   drop(event: CdkDragDrop<TaskInfo[]>) {
-    console.log('drop', event.container.data);
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

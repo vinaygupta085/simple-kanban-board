@@ -19,26 +19,20 @@ export class SectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('SectionComponent', this.stage);
     this.title = Stage[this.stage];
     this.todo = this.stage === Stage['ToDO'];
   }
 
   addTask(event: MouseEvent): void {
-    console.log('addTask');
     this.toggle();
   }
 
   removeTask(event: MouseEvent, taskInfo: TaskInfo): void {
-    console.log('removeTask', taskInfo);
-
     //TODO: add a confirmation from user before remove
     this.tasks = this.tasks.filter( task => task.id !== taskInfo.id);
   }
 
   saveTask(event: MouseEvent): void {
-    console.log('saveTask', event);
-
     const newID = maxID(this.tasks);
 
     this.tasks.push({
