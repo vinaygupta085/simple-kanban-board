@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { maxID } from 'src/app/common/util';
-import { Stage, TaskInfo } from '../../../model';
+import { Stage, TaskInfo } from 'src/app/models';
 
 @Component({
   selector: 'app-section',

@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { Stage, TaskInfo } from '../model';
+import { Stage, TaskInfo } from 'src/app/models';
 
 @Component({
   selector: 'app-tasks',
