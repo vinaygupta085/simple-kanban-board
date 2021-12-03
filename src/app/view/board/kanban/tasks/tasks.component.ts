@@ -23,17 +23,6 @@ export class TasksComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // this.tasks = [
-    //   { id : 1, name: 'Task1', stage: Stage.Done},
-    //   { id : 2, name: 'Task2', stage: Stage.Done},
-    //   { id : 3, name: 'Task3', stage: Stage.Implementing},
-    //   { id : 4, name: 'Task4', stage: Stage.Done},
-    //   { id : 5, name: 'Task5', stage: Stage.Implementing},
-    //   { id : 6, name: 'Task6', stage: Stage.Implementing},
-    //   { id : 7, name: 'Task7', stage: Stage.ToDO},
-    //   { id : 8, name: 'Task8', stage: Stage.Done},
-    //   { id : 9, name: 'Task9', stage: Stage.ToDO},
-    // ];
     this.subs.sink = this.boardDataService.tasks$.subscribe(tasks => {
       this.tasks = tasks;
 

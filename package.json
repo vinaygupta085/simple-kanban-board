@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "serve": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -13,6 +14,11 @@
     "npm": "8.1.4"
   },
   "private": true,
+  "author": "Vinay Gupta",
+  "contributors": [
+    "Vinay Gupta",
+    "Jari Repo"
+  ],
   "dependencies": {
     "@angular/animations": "~13.0.0",
     "@angular/cdk": "^13.0.2",

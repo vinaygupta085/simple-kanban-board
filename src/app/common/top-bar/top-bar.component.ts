@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APPLICATION } from '../constant';
 
 @Component({
   selector: 'app-top-bar',
@@ -12,4 +13,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get appTitle(): string {
+    return APPLICATION.TITLE;
+  }
 }

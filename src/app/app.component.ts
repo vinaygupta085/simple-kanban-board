@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { APPLICATION } from './common/constant';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simple-kanban-board';
+
+  get appTitle(): string {
+    return APPLICATION.TITLE;
+  }
 }
