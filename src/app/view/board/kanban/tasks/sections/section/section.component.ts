@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { maxID } from 'src/app/common/util';
 import { Stage, TaskInfo } from 'src/app/models';
 
@@ -10,6 +10,7 @@ import { Stage, TaskInfo } from 'src/app/models';
 export class SectionComponent implements OnInit {
   @Input() stage = 1;
   @Input() tasks: TaskInfo[] = [];
+  @Output() onSaveTask = new EventEmitter<TaskInfo>();
 
   todo = false;
   addNew = false;
@@ -35,12 +36,14 @@ export class SectionComponent implements OnInit {
   saveTask(event: MouseEvent): void {
     const newID = maxID(this.tasks);
 
-    this.tasks.push({
+    const newtask = {
       id: newID,
       name: this.taskName,
       stage: Stage.ToDO,
       new: true
-    });
+    };
+
+    this.onSaveTask.emit(newtask);
 
     this.toggle();
   }

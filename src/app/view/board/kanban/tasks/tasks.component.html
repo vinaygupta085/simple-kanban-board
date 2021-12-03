@@ -6,7 +6,7 @@
         [cdkDropListConnectedTo]="[implementList, doneList]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
-          <app-section [stage]="1" [tasks]="todo"></app-section>
+          <app-section [stage]="1" [tasks]="todo" (onSaveTask)="saveTask($event)"></app-section>
     </div>
 
     <div
