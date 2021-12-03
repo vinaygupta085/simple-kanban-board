@@ -1,16 +1,16 @@
 import { ActionReducerMap, createReducer } from '@ngrx/store';
-import { CanbanBoard } from './canban-board/canban-board.model';
+import { KanbanBoard } from './kanban-board/kanban-board.model';
 
-import * as fromCanban from './canban-board/canban-board.reducer';
+import * as fromKanban from './kanban-board/kanban-board.reducer';
 
 export interface AppState {
-	canban: CanbanBoard;
+	kanban: KanbanBoard;
 }
 
 export const initialState: AppState = {
-	canban: fromCanban.initialState
+	kanban: fromKanban.initialState
 };
 
 export const reducers: ActionReducerMap<AppState> = {
-	canban: fromCanban.canbanReducer
+	kanban: fromKanban.kanbanReducer
 }

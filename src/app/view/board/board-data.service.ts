@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TaskInfo } from 'src/app/models';
-import { AddTask } from 'src/app/store/canban-board/canban-board.actions';
-import { getTasks } from 'src/app/store/canban-board/canban-board.selectors';
+import { AddTask } from 'src/app/store/kanban-board/kanban-board.actions';
+import { getTasks } from 'src/app/store/kanban-board/kanban-board.selectors';
 import { AppState } from 'src/app/store/reducers';
 
 @Injectable({
