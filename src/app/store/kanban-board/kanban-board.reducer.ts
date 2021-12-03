@@ -1,6 +1,8 @@
+import { state } from '@angular/animations';
 import { createReducer, on } from '@ngrx/store';
+import { maxID } from 'src/app/common/util';
 import { Stage, TaskInfo } from 'src/app/models';
-import { AddTask } from './kanban-board.actions';
+import { AddTask, DeleteTask, RearrangeTask } from './kanban-board.actions';
 
 export interface State {
   tasks: TaskInfo[];
@@ -25,7 +27,30 @@ export const kanbanReducer = createReducer(
   on(AddTask, (state, task) => {
     return {
       ...state,
-      tasks: [task, ...state.tasks],
+      tasks: [
+        {
+          id: maxID(state.tasks),
+          name: task.name,
+          stage: task.stage,
+          new: true
+        },
+        ...state.tasks
+      ],
+    };
+  }),
+  on(DeleteTask, (state, task) => {
+    return {
+      ...state,
+      tasks: [...state.tasks.filter(v => v.id !== task.id)],
+    };
+  }),
+  on(RearrangeTask, (state, task) => {
+    return {
+      ...state,
+      tasks: [
+        task,
+        ...state.tasks.filter(v => v.id !== task.id)
+      ],
     };
   })
 );

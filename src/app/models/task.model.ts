@@ -8,8 +8,8 @@ export interface TaskInfo {
 	id: number;
 	name: string;
 	description?: string;
-  priority?: number;
+  sortOrder?: number;
 	owner?: string;
-	stage: Stage;
+	stage?: Stage;
 	new?: boolean;
 }

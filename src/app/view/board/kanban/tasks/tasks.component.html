@@ -6,7 +6,7 @@
         [cdkDropListConnectedTo]="[implementList, doneList]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
-          <app-section [stage]="1" [tasks]="todo" (onSaveTask)="saveTask($event)"></app-section>
+          <app-section [stage]="1" [tasks]="todo" (onSaveTask)="saveTask($event)" (onRemoveTask)="deleteTask($event)"></app-section>
     </div>
 
     <div
@@ -16,7 +16,7 @@
         [cdkDropListConnectedTo]="[todoList, doneList]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
-          <app-section [stage]="2" [tasks]="implemneting"></app-section>
+          <app-section [stage]="2" [tasks]="implemneting" (onRemoveTask)="deleteTask($event)"></app-section>
     </div>
 
     <div
@@ -26,7 +26,7 @@
         [cdkDropListConnectedTo]="[implementList, todoList]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
-          	<app-section [stage]="3" [tasks]="done"></app-section>
+          	<app-section [stage]="3" [tasks]="done" (onRemoveTask)="deleteTask($event)"></app-section>
       </div>
 
 </div>

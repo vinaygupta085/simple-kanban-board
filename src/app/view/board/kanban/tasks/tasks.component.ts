@@ -36,10 +36,15 @@ export class TasksComponent implements OnInit, OnDestroy {
     this.boardDataService.saveTask(task);
   }
 
+  deleteTask(task: TaskInfo): void {
+    this.boardDataService.deleteTask(task);
+  }
+
   drop(event: CdkDragDrop<TaskInfo[]>) {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      this.boardDataService.rearrangeTask(event.container.data[event.previousIndex]);
     } else {
       transferArrayItem(
         event.previousContainer.data,
